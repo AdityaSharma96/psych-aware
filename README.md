@@ -4,6 +4,10 @@
 ## Tasks Done:
 - Django Project Setup done
 - Home Page done
+- Review Part Done
+- Blog System Done
+- Appointment Schedulling and System Done
+- Chat application Done
 
 ## Screenshots:
 
