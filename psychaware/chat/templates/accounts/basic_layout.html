@@ -16,7 +16,7 @@
 
 <body>
     <nav class="navbar navbar-expand-md navbar-dark bg-dark text-white p-2">
-        <a class="navbar-brand pl-2" href="{% url 'home' %}">Psych Aware</a>
+        <a class="navbar-brand pl-2" href="{% url 'home' %}"><span>Psych Aware</span></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -41,7 +41,7 @@
                                 aria-hidden="true"></i> {{request.user.client_profile.name}}</a>
                     {% else %}
                     <a class="nav-link" href="{% url 'profile' %}"><i class="fa fa-user-circle-o"
-                        aria-hidden="true"></i> {{request.user.email}} </a>
+                        aria-hidden="true"></i> {{request.user.email}} </a>            
                     {% endif %}
                 </li>
 
@@ -61,7 +61,7 @@
                 </li>
 
                 {% endif %}
-
+             
             </ul>
 
         </div>
@@ -69,7 +69,7 @@
 
     {% block body %} {% endblock %}
 
-    <div class="pt-4 my-md-5 pt-md-5 border-top container text-dark">
+    <div class="pt-4 my-md-5 pt-md-5 border-top container">
         <div class="row my-4">
 
                 <div class="card text-white bg-dark mb-3 col-md-4 mb-3 text-center p-2" >
@@ -86,13 +86,13 @@
                                  </ul>
                         </div>
                 </div>
+            
 
 
-
-            <div class="col-md-4 mb-3 text-center text-dark">
+            <div class="col-md-4 mb-3 text-center">
                 <h5>Address</h5>
                 <ul class="list-unstyled text-small">
-                    <p class="text-dark">Shri Ramdeobaba College of Engineering and Management<br> Ramdeo Tekdi,
+                    <p class="text-muted">Shri Ramdeobaba College of Engineering and Management<br> Ramdeo Tekdi,
                         Gittikhadan,<br> Katol Road, Nagpur- 440013 <br>(India)</p>
                 </ul>
             </div>
@@ -100,15 +100,15 @@
             <div class="col-md-4 mb-3 text-center ">
                 <h5>Contact Us</h5>
                 <ul class="list-unstyled text-small">
-                    <li class="text-dark">Mobile</li>
-                    <li class="text-dark">Yash Agrawal : 7083645470</li>
-                    <li class="text-dark">Atul Thakre : 8956758226</li>
-                    <li class="text-dark">Aditya Sharma : 8669809698</li>
-                    <li class="text-dark">Nikeshsingh Baghel : 9405320787</li>
+                    <li class="text-muted">Mobile</li>
+                    <li class="text-muted">Yash Agrawal : 7083645470</li>
+                    <li class="text-muted">Atul Thakre : 8956758226</li>
+                    <li class="text-muted">Aditya Sharma : 8669809698</li>
+                    <li class="text-muted">Nikeshsingh Baghel : 9405320787</li>
 
                 </ul>
 
-                <p class="text-small text-dark">Social Media</p>
+                <p class="text-small text-muted">Social Media</p>
 
 
                 <div class="d-inline p-1">
@@ -135,10 +135,6 @@
             </span>
         </div>
     </footer>
-
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
 
     {% block script_section %} {% endblock %}
 
