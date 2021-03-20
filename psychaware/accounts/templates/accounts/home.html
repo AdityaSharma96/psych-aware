@@ -1,0 +1,165 @@
+{% extends 'accounts/basic_layout.html' %}
+
+
+{% block title %} Psychaware {% endblock %}
+
+{% block head %}
+<style>
+    body{
+    background:linear-gradient(-100deg,white 40%,violet 60%);
+
+    font-family:poppins;
+    }
+
+    .img-text p{
+    font-size:14px;
+    }
+     .img-text h2{
+    font-size:14px;
+    }
+    .carousel-indicators{
+    left:0;
+    top:auto;
+    bottom:-70px;
+    }
+    .carousel-indicators li{
+    background:#000;
+    border-radius:50%;
+    width:15px;
+    height:8px;
+    }
+    .single-box{
+    border-radius:8%;
+    }
+
+</style>
+{% endblock %}
+
+{% block body %}
+
+<div class="container-fluid text-center" >
+
+    <!--about us-->
+
+            <h1 class="display-3 my-4">Welcome To</h1>
+            <h1 class="display-1 text-primary"><b>Psych Aware</b></h1>
+            <h2 class="my-3">About Us</h2>
+            <div class="container bg-dark" style="width:220px;height:8px"></div>
+                <h5 class="p-3 text-dark"><strong>Psych Aware is a platform dedicated to everyone’s favourite subject : Ourselves<br>
+                        PSYCH AWARE basically means awareness of the mind. Everyone struggles at times. Our core purpose
+                        is to make it easier for people to access mental health services and the dedicated professionals
+                        who provide them, anywhere in the world. Psych Aware believes that with the right support,
+                        anyone is capable of healing, growth, and change. Whether you’re interested in seeking help or
+                    you provide them, you’ve come to the right place.</strong></h5>
+</div>
+
+<!-- /container -->
+<main class="container-fluid">
+  <div class="bg-light p-5 rounded" style="background-image:url('https://media.istockphoto.com/photos/adult-and-child-hands-holding-lime-green-ribbon-on-green-background-picture-id1173495922?k=6&m=1173495922&s=612x612&w=0&h=7rJhwKJtBsy4PoDNjiqGxNOabk5QIAMHtRBM6sGWdeY=');background-position: center;
+  background-repeat: no-repeat; background-size: cover; ">
+    <h1>Our Blogs</h1>
+    <p class="lead">Visit our Blog Section to see what our mentors say..</p>
+    <a class="btn btn-lg btn-primary" href="/blog/view" role="button">Visit Blog Page &raquo;</a>
+  </div>
+</main>
+<!--Developers-->
+<hr>
+<div class="container my-2" id="review">
+    <h2 class="text-center ">What Students say About Us...</h2>
+    <div class="row my-2">
+        <div class="col-md-12">
+            <div id="demo{{forloop.counter}}" class="carousel slide" data-bs-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-bs-target="#demo{{forloop.counter}}" data-bs-slide-to="0" class="active"></li>
+                {% for i in range %}
+                <li data-bs-target="#demo{{forloop.parentloop.counter}}" data-bs-slide-to="{{i}}"></li>
+                {% endfor %}
+
+            </ol>
+            <div class="carousel-inner text-center text-white">
+              <div class="carousel-item active">
+                  <div class="row">
+                   {% for i in reviews %}
+
+                      <div class="col-xs-3 col-sm-3 col-md-3">
+                          <div class="single-box bg-dark border-rounded p-3">
+                              <div class="img-area ">
+                                  <img class="bd-placeholder-img rounded-circle my-3" width="40" height="40" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTnIyZxJAl5REjZbn-b1EMFrTtXw3dXAQ7fTg&usqp=CAU" alt="">
+                                  <div class="img-text h2">{{i.author.client_profile.name}}</div>
+                                  <p>{{i.content}}</p>
+                              </div>
+                          </div>
+                      </div>
+                  {% if forloop.counter|divisibleby:4 and forloop.counter > 0 and not forloop.last %}
+                   <div class="carousel-item">
+                                {% endif %}
+                                {% endfor %}
+                                </div>
+                            </div>
+
+              </div>
+            </div>
+                  <a class="carousel-control-prev" href="#demo{{forloop.counter}}" role="button" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#demo{{forloop.counter}}" role="button" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </a>
+        </div>
+    </div>
+
+    </div>
+    </div>
+<br><br>
+<hr>
+<div class="container my-4">
+    <div class="row my=3">
+        <div class="container">
+            <h2 class="text-center">Developers</h2>
+        </div>
+        <div class="col-md-3 my-3 text-center">
+            <img class="bd-placeholder-img rounded-circle" width="140" height="140"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTnIyZxJAl5REjZbn-b1EMFrTtXw3dXAQ7fTg&usqp=CAU"></img>
+            <h2>Atul Thakre</h2>
+            <p>Engineering Student of RCOEM.Pursuing BE degree and presently in 3rd year.</p>
+            <p><a class="btn btn-primary" href="https://www.linkedin.com/in/arthakre/" role="button">View LinkedIn
+                    profile &raquo;</a></p>
+        </div>
+
+        <div class="col-md-3 my-3 text-center">
+            <img class="bd-placeholder-img rounded-circle" width="140" height="140"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTnIyZxJAl5REjZbn-b1EMFrTtXw3dXAQ7fTg&usqp=CAU"></img>
+            <h2>Yash Agrawal</h2>
+            <p>Engineering Student of RCOEM.Pursuing BE degree and presently in 3rd year. I am a web developer and
+                python enthusiast.</p>
+            <p><a class="btn btn-primary" href="https://www.linkedin.com/in/yash-agrawal-90b05217a" role="button">View
+                    LinkedIn profile &raquo;</a></p>
+        </div>
+
+        <div class="col-md-3 my-3 text-center">
+            <img class="bd-placeholder-img rounded-circle" width="140" height="140"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTnIyZxJAl5REjZbn-b1EMFrTtXw3dXAQ7fTg&usqp=CAU"></img>
+            <h2>Aditya Sharma</h2>
+            <p>Engineering Student of RCOEM.Pursuing BE degree and presently in 3rd year. I am a web developer and
+                python enthusiast.</p>
+            <p><a class="btn btn-primary" href="https://www.linkedin.com/in/aditya-sharma-0b21a3197" role="button">View
+                    LinkedIn profile &raquo;</a></p>
+        </div>
+
+        <div class="col-md-3 my-3 text-center">
+            <img class="bd-placeholder-img rounded-circle" width="140" height="140"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTnIyZxJAl5REjZbn-b1EMFrTtXw3dXAQ7fTg&usqp=CAU"></img>
+            <h2>Shubham Saboo</h2>
+            <p>Engineering Student of RCOEM.Pursuing BE degree and presently in 3rd year. I am a web developer and
+                python enthusiast.</p>
+            <p><a class="btn btn-primary" href="https://www.linkedin.com/in/shubham-saboo-2000" role="button">View
+                    LinkedIn profile &raquo;</a></p>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block script_section %} {% endblock %}
