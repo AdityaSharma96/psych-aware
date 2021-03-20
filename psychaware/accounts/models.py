@@ -1,7 +1,4 @@
 from django.db import models
-
-# Create your models here.
-from django.db import models
 from django.contrib.auth.models import(
     AbstractBaseUser, BaseUserManager
 )
@@ -142,7 +139,7 @@ class User(AbstractBaseUser):
 class Review(models.Model):
     review_id = models.AutoField(primary_key=True)
     author = models.OneToOneField(User, on_delete=models.CASCADE)
-    content = models.CharField(max_length=300,default='')
+    content = models.CharField(max_length=600,default='')
 
     def __str__(self):
         return str(self.review_id) + " : author = " + str(self.author) + " content: " + str(self.content)

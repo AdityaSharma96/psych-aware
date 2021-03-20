@@ -29,35 +29,35 @@
                 </li>
                 {% if user.is_authenticated %}
                 <li class="nav-item text-center">
-                    <a class="nav-link" href=""><i class="fa fa-sign-out" aria-hidden="true"></i>
+                    <a class="nav-link" href="{% url 'user_logout' %}"><i class="fa fa-sign-out" aria-hidden="true"></i>
                         Logout</a>
                 </li>
                 <li class="nav-item text-center">
                     {% if request.user.user_type == 'Expert' %}
-                    <a class="nav-link" href=""><i class="fa fa-user-circle-o"
+                    <a class="nav-link" href="{% url 'profile' %}"><i class="fa fa-user-circle-o"
                             aria-hidden="true"></i> {{request.user.expert_profile.name}}</a>
                     {% elif request.user.user_type == 'Client' %}
-                    <a class="nav-link" href=""><i class="fa fa-user-circle-o"
+                    <a class="nav-link" href="{% url 'profile' %}"><i class="fa fa-user-circle-o"
                                 aria-hidden="true"></i> {{request.user.client_profile.name}}</a>
                     {% else %}
-                    <a class="nav-link" href=""><i class="fa fa-user-circle-o"
+                    <a class="nav-link" href="{% url 'profile' %}"><i class="fa fa-user-circle-o"
                         aria-hidden="true"></i> {{request.user.email}} </a>            
                     {% endif %}
                 </li>
 
                 {% else %}
                 <li class="nav-item text-center">
-                    <a class="nav-link" href=""><i class="fa fa-user-plus" aria-hidden="true"></i>
+                    <a class="nav-link" href="{% url 'expert_register' %}"><i class="fa fa-user-plus" aria-hidden="true"></i>
                         Expert Registration</a>
                 </li>
 
                 <li class="nav-item text-center">
-                    <a class="nav-link" href=""><i class="fa fa-user-plus" aria-hidden="true"></i>
+                    <a class="nav-link" href="{% url 'user_register' %}"><i class="fa fa-user-plus" aria-hidden="true"></i>
                         User Registration</a>
                 </li>
 
                 <li class="nav-item text-center">
-                    <a class="nav-link" href=""><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a>
+                    <a class="nav-link" href="{% url 'user_login' %}"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a>
                 </li>
 
                 {% endif %}
@@ -104,7 +104,7 @@
                     <li class="text-muted">Yash Agrawal : 7083645470</li>
                     <li class="text-muted">Atul Thakre : 8956758226</li>
                     <li class="text-muted">Aditya Sharma : 8669809698</li>
-                    <li class="text-muted">Nikeshsingh Baghel : 9284210846</li>
+                    <li class="text-muted">Nikeshsingh Baghel : 9405320787</li>
 
                 </ul>
 
@@ -131,7 +131,7 @@
     <footer class="footer mt-auto py-3 bg-dark">
         <div class="container">
             <span class="text-muted">
-                <center>Developed by Atul Thakre, Yash Agrawal, Aditya Sharma, Nikeshsingh Baghel(2021)</center>
+                <center>Developed by Atul Thakre, Yash Agrawal, Aditya Sharma, Nikeshsingh Baghel (2021)</center>
             </span>
         </div>
     </footer>

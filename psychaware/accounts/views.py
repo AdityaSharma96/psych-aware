@@ -41,6 +41,18 @@ def user_login(request):
         return render(request,'accounts/login.html', {'loginStatus':'OK'})
 
 @cache_control(no_cache=True, must_revalidate=True, no_store=True)
+def user_logout(request):
+    if not request.user.is_authenticated:
+        # If the user is not logged in , send to home
+        return redirect('home')
+    logout(request)
+    return render(request, 'accounts/logout.html')
+
+@cache_control(no_cache=True, must_revalidate=True, no_store=True)
+def userRegister(request):
+    return render(request,'accounts/clientRegistration.html')
+
+@cache_control(no_cache=True, must_revalidate=True, no_store=True)
 def expertRegister(request):
     if request.method=="POST":
         user_form = CustomUserCreationForm(request.POST)
@@ -161,15 +173,6 @@ def clientRegister(request):
             return render(request,'accounts/registrationSuccessful.html')
     else:
         return render(request, 'accounts/clientRegistration.html' , {'registerStatus':'OK'})
-
-
-@cache_control(no_cache=True, must_revalidate=True, no_store=True)
-def user_logout(request):
-    if not request.user.is_authenticated:
-        # If the user is not logged in , send to home
-        return redirect('home')
-    logout(request)
-    return render(request, 'accounts/logout.html')
 
 
 @cache_control(no_cache=True, must_revalidate=True, no_store=True)
