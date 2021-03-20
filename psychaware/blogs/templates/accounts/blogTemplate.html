@@ -1,0 +1,71 @@
+{% extends 'accounts/basic_layout.html' %}
+
+
+{% block title %} {{blog.title}} {% endblock %}
+
+{% block head %}
+<!-- To Make The Blog Author Info Box Stick To The Left Of Blog Content Box -->
+<style>
+    .col-md-3.sticky-top {
+        align-self: flex-start;
+    }
+</style>
+{% endblock %}
+
+{% block body %}
+
+<div class="container my-3">
+    <div class="row">
+        <!-- Column -->
+        <div class="col-md-3">
+            <div class="card shadow sticky-top">
+                <div class="card-body">
+                    <!-- <div class="row"> -->
+                    <center class="m-t-15">
+                        <div>
+                            <h4 id="Name" class="card-title m-t-10">About Author</h4>
+                            <img id="Image" src="https://cdn2.iconfinder.com/data/icons/font-awesome/1792/user-512.png"
+                                class="img-circle" width="100" />
+                            <h4 id="Name" class="card-title m-t-10">{{blog.author.name}}</h4>
+
+                        </div>
+                    </center>
+                    <hr />
+                    <div>
+                        <h6>Qualification : {{blog.author.qualification}}</h6>
+                        <h6>Bio : {{blog.author.bio}}</h6>
+                        <center>
+                            <!--
+                            <button class="btn btn-success">Message</button>-->
+                        </center>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Column -->
+
+        <!-- Column -->
+        <div class="col-md-9">
+            <div class="card">
+                <h5 class="card-title text-center p-3 shadow bg-primary text-white">
+                    {{blog.title}}
+                </h5>
+                <div class="card-text p-3">
+                    <p>Datetime : {{blog.datetime}}</p>
+                    <p>Tags:
+                        {% for tag_item in tag_set %}
+                        <span class="bg-primary p-1 m-1 rounded text-white">{{tag_item.tag_id.tag}}</span>
+
+                        {% endfor %}
+                    </p>
+                    {{blog.content | safe}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Column -->
+</div>
+
+{% endblock %}
+
+{% block script_section %} {% endblock %}

@@ -1,0 +1,52 @@
+{% extends 'accounts/basic_layout.html' %}
+
+
+{% block title %} Experts {% endblock %}
+
+{% block head %} {% endblock %}
+
+{% block body %}
+
+<div class="col-sm-4 m-5">
+    <div style="height:70vh;">
+        <h5 class="bg-primary text-white px-3 p-2 mb-0">Our Experts</h5>
+
+        <div class="jumbotron pt-2 overflow-auto bg-dark " style="background-color:white;overflow:auto;height:100%;">
+
+
+
+
+            {% for expert in expert_list %}
+            <div id="accordion" class="mb-4 p-3">
+                <form method="POST" action="get_appointment/{{expert.profile_id}}">
+                    {% csrf_token %}
+                    <div class="card">
+                        <div class="card-header bg-primary text-white">
+                            <span><img src="" class="mx-3" width="100px" height="100px" /></span>
+                            <a class="card-link text-white" data-toggle="collapse"
+                                href="#collapse{{expert.profile_id}}">
+                                {{expert.name}}
+                            </a>
+                        </div>
+
+                        <div id="collapse{{expert.profile_id}}" class="collapse show" data-parent="#accordion">
+                            <div class="card-body text-dark">
+                                Qualification: {{expert.qualification}}
+                                <hr>
+                                <button type="submit" class="bg-primary text-white border-white p-1">Ask For
+                                    Appointment</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+            {% endfor %}
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block script_section %} {% endblock %}

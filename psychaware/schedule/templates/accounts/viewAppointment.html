@@ -1,0 +1,108 @@
+{% extends 'accounts/basic_layout.html' %}
+
+
+{% block title %} Appointments | {{request.user.client_profile.name}} {% endblock %}
+
+{% block head %} {% endblock %}
+
+{% block body %}
+<div class="row m-4" style="clear:both;">
+    <div class="col-sm-6">
+        <div style="height:75vh;">
+            <h5 class="bg-primary text-white px-3 p-2 mb-0">Follow Up</h5>
+
+            <div class="jumbotron pt-2 overflow-auto bg-dark "
+                style="background-color:white;overflow:auto;height:100%;">
+
+
+
+
+                {% for appointment in follow_list %}
+                <div id="accordion" class="mb-3 px-3">
+                    <form method="POST" action="response/{{appointment.appointment_id}}">
+                        {% csrf_token %}
+                        <div class="card">
+                            <div class="card-header bg-primary text-white">
+                                <span><img src="data:image/png;base64,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" class="mx-3" width="40px" height="40px" /></span>
+                                <a class="card-link text-white" data-toggle="collapse"
+                                    href="#collapse{{appointment.appointment_id}}">
+                                    {{appointment.expert_profile.name}}
+                                </a>
+                            </div>
+
+                            <div id="collapse{{appointment.appointment_id}}" class="collapse show" data-parent="#accordion">
+                                <div class="card-body text-dark">
+                                    Qualification: {{appointment.expert_profile.qualification}}
+                                    <hr>
+                                    {% if appointment.expert_acknowledgement == 'R' %}
+                                        Sorry Rejected.
+                                    {% else %}
+                                        {% if appointment.expert_acknowledgement == 'NA' %}
+                                        <p>Response Awaited</p>
+                                        {% else %}
+                                        <p>Meeting Scheduled</p>
+                                        <button type="submit" name='confirm-response' class="bg-primary text-white border-white p-1">Confirm</button>
+                                        <button type="submit" name='cancel-response' class="bg-primary text-white border-white p-1">Cancel</button>
+                                        {% endif %}
+                                    {% endif %}
+
+                                </div>
+                            </div>
+
+                        </div>
+
+                </div>
+                {% endfor %}
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="col-sm-6">
+        <div style="height:75vh;">
+            <h5 class="bg-primary text-white px-3 p-2 mb-0">Scheduled Appointments</h5>
+
+            <div class="jumbotron pt-2 overflow-auto bg-dark "
+                style="background-color:white;overflow:auto;height:100%;">
+
+
+
+
+                {% for appointment in scheduled_list %}
+                <div id="accordion" class="mb-4 p-3">
+                    <form method="POST" action="../{{appointment.chat_room}}">
+                        {% csrf_token %}
+                        <div class="card">
+                            <div class="card-header bg-primary text-white">
+                                <span><img src="data:image/png;base64,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" class="mx-3" width="40px" height="40px" /></span>
+                                <a class="card-link text-white" data-toggle="collapse"
+                                    href="#collapse{{appointment.appointment_id}}">
+                                    {{appointment.expert_profile.name}}
+                                </a>
+                            </div>
+
+                            <div id="collapse{{expert.profile_id}}" class="collapse show" data-parent="#accordion">
+                                <div class="card-body text-dark">
+                                    Qualification: {{appointment.expert_profile.qualification}}<br/>
+                                    <hr>
+                                    Scheduled Time : {{appointment.datetime}}<br/>
+                                    <button type="submit" class="bg-primary text-white border-white p-1">Join Chat</button>
+                                </div>
+                            </div>
+
+                        </div>
+
+                </div>
+                {% endfor %}
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>
+{% endblock %}
+
+{% block script_section %} {% endblock %}

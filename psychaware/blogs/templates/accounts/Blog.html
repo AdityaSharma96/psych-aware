@@ -1,0 +1,71 @@
+{% extends 'accounts/basic_layout.html' %}
+
+
+{% block title %} {{blog.title}} {% endblock %}
+
+{% block head %}
+
+{% endblock %}
+
+{% block body %}
+<div class="jumbotron bg-light">
+    <div class="container-fluid">
+        <h1 class="display-1 text-center pt-4">BLOGS</h1>
+        <h4 class="text-center pb-3">See What our Professionals want to say to our readers.....</h4>
+
+    </div>
+
+    <div class="container-fluid bg-gray mx-auto">
+
+        <div class="row gap-y m-3">
+            {% for i in blogposts %}
+            <div class="col-md-6">
+
+                <div
+                    class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                    <div class="col p-4 d-flex flex-column position-static">
+                        <strong class="d-inline-block mb-2 text-primary">Written By {{i.0.author.name}}</strong>
+                        <h3 class="mb-0">{{i.0.title}}</h3>
+                        <div class="mb-1 text-muted">Posted on {{i.0.datetime}}</div>
+                        <p class="card-text mb-auto">{{i.0.content | safe|slice:"0:40"}}</p>
+                        <button class="btn btn-primary"> <a href="../read/{{i.2}}_{{i.0.blog_id}}">Continue Reading..</a></button>
+                    </div>
+                    <div class="col-auto d-none d-lg-block">
+                        <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg"
+                            preserveAspectRatio="xMidYMid slice" focusable="false" role="img"
+                            aria-label="Placeholder: Thumbnail">
+                            <rect width="100%" height="100%" fill="{{i.1}}" />
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+            {% empty %}
+            <p class="text-center">Sorry, No Blogs Posted yet!!</p>
+            {% endfor %}
+
+        </div>
+
+        <nav class="flexbox mt-30 text-center">
+            {% if blogs.has_previous %}
+            <a href="?page={{blogs.previous_page_number}}" class="btn btn-white">
+                < Previous</a>
+                    {% else %}
+                    <a href="#" class="btn btn-white disabled">
+                        < Previous</a>
+                            {% endif %}
+
+                            {% if blogs.has_next %}
+                            <a href="?page={{blogs.next_page_number}}" class="btn btn-white">Next ></a>
+                            {% else %}
+                            <a href="#" class="btn btn-white disabled"> Next ></a>
+                            {% endif %}
+        </nav>
+
+    </div>
+
+</div>
+
+{% endblock %}
+
+{% block script_section %} {% endblock %}
