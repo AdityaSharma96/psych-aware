@@ -1,0 +1,88 @@
+{% extends 'accounts/basic_layout.html' %}
+
+
+{% block title %} Logout {% endblock %}
+
+{% block head %} {% endblock %}
+
+{% block body %}
+
+<div class="alert alert-success alert-dismissible fade show" role="alert" id="alert">
+  <strong>Logged Out Successfully!!!</strong>
+  <button type="button" class="btn-close" id="close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+<script>
+document.getElementById("close").onclick = function() {
+        document.getElementById("alert").style.display = "none";
+}
+</script>
+
+<div class="container-fluid bg-info text-center">
+
+    <!--about us-->
+
+            <h1 class="display-3 my-4">Welcome To</h1>
+            <h1 class="display-1"><b>Psych Aware</b></h1>
+            <h2 class="my-3">About Us</h2>
+            <div class="container bg-dark" style="width:220px;height:8px"></div>
+                <h5 class="p-3 text-white">Psych Aware is a platform dedicated to everyone’s favourite subject : Ourselves<br>
+                        PSYCH AWARE basically means awareness of the mind. Everyone struggles at times. Our core purpose
+                        is to make it easier for people to access mental health services and the dedicated professionals
+                        who provide them, anywhere in the world. Psych Aware believes that with the right support,
+                        anyone is capable of healing, growth, and change. Whether you’re interested in seeking help or
+                        you provide them, you’ve come to the right place.</h5>
+</div>
+
+<!-- /container -->
+
+<!--Developers-->
+<hr>
+<div class="container my-4">
+    <div class="row">
+        <div class="container">
+            <h2 class="text-center">Developers</h2>
+        </div>
+        <div class="col-md-3 my-3 text-center">
+            <img class="bd-placeholder-img rounded-circle" width="140" height="140"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTnIyZxJAl5REjZbn-b1EMFrTtXw3dXAQ7fTg&usqp=CAU"></img>
+            <h2>Atul Thakre</h2>
+            <p>Engineering Student of RCOEM.Pursuing BE degree and presently in 3rd year.</p>
+            <p><a class="btn btn-primary" href="https://www.linkedin.com/in/arthakre/" role="button">View LinkedIn
+                    profile &raquo;</a></p>
+        </div>
+
+        <div class="col-md-3 my-3 text-center">
+            <img class="bd-placeholder-img rounded-circle" width="140" height="140"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTnIyZxJAl5REjZbn-b1EMFrTtXw3dXAQ7fTg&usqp=CAU"></img>
+            <h2>Yash Agrawal</h2>
+            <p>Engineering Student of RCOEM.Pursuing BE degree and presently in 3rd year. I am a web developer and
+                python enthusiast.</p>
+            <p><a class="btn btn-primary" href="https://www.linkedin.com/in/yash-agrawal-90b05217a" role="button">View
+                    LinkedIn profile &raquo;</a></p>
+        </div>
+
+        <div class="col-md-3 my-3 text-center">
+            <img class="bd-placeholder-img rounded-circle" width="140" height="140"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTnIyZxJAl5REjZbn-b1EMFrTtXw3dXAQ7fTg&usqp=CAU"></img>
+            <h2>Aditya Sharma</h2>
+            <p>Engineering Student of RCOEM.Pursuing BE degree and presently in 3rd year. I am a web developer and
+                python enthusiast.</p>
+            <p><a class="btn btn-primary" href="https://www.linkedin.com/in/yash-agrawal-90b05217a" role="button">View
+                    LinkedIn profile &raquo;</a></p>
+        </div>
+
+        <div class="col-md-3 my-3 text-center">
+            <img class="bd-placeholder-img rounded-circle" width="140" height="140"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTnIyZxJAl5REjZbn-b1EMFrTtXw3dXAQ7fTg&usqp=CAU"></img>
+            <h2>Shubham Saboo</h2>
+            <p>Engineering Student of RCOEM.Pursuing BE degree and presently in 3rd year. I am a web developer and
+                python enthusiast.</p>
+            <p><a class="btn btn-primary" href="https://www.linkedin.com/in/yash-agrawal-90b05217a" role="button">View
+                    LinkedIn profile &raquo;</a></p>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block script_section %} {% endblock %}

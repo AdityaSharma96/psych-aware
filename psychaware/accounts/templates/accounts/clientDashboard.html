@@ -1,0 +1,174 @@
+{% extends 'accounts/basic_layout.html' %}
+
+
+{% block title %} Student Dashboard {% endblock %}
+
+{% block head %}
+
+<meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous" />
+    <script src="https://cdn.tiny.cloud/1/u1w8hkhy295bx3c46wxvt10qngg0c33lobkxz7bq5tnwlpdg/tinymce/5/tinymce.min.js"
+        referrerpolicy="origin"></script>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script>
+        tinymce.init({
+            selector: "review_content",
+        });
+    </script>
+   <style>
+    .col-md-3.sticky-top {
+      align-self: flex-start;
+    }
+    </style>
+
+{% endblock %}
+
+{% block body %}
+
+<div class="container my-3">
+    <div class="row">
+        <!-- Column -->
+
+        <div class="col-md-4">
+            <div class="card shadow">
+                <div class="card-body">
+                    <!-- <div class="row"> -->
+                    <center class="m-t-15">
+                        <div>
+                            <img id="Image"
+                                src="https://cdn2.iconfinder.com/data/icons/font-awesome/1792/user-512.png"
+                                class="img-circle" width="100" />
+                            <hr>
+                            <h3 id="Name" class="card-title m-t-10">
+                                <!-- client name -->
+                                {{client_profile.name}}
+                            </h3>
+                        </div>
+                    </center>
+
+                </div>
+            </div>
+
+            <div class="my-4 text-center justify-content-center ">
+                        <center class="m-t-15">
+                        <div class="card border-success mb-3 " >
+                          <div class="card-header border-success bg-dark text-white h5 ">Appointments</div>
+                          <div class="card-body text-success" style="background-image: linear-gradient(white,rgb(71, 21, 153));">
+
+                             <br> <a href="schedule/appointment" class="btn btn-success border-radius container my-2 text-white" >Check Appointments</a>
+
+
+                          </div>
+
+                        </div>
+                      </center>
+                    </div>
+        </div>
+
+        <!--
+------------------------------------------------------------------------------------------------------------------------- -->
+
+        <!-- Column -->
+
+        <!-- Column -->
+
+        <div class="col-md-8">
+            <div style="height: 65vh">
+                <h5 class="bg-primary text-white px-3 p-2 mb-0 text-center">
+                    Our Experts
+                </h5>
+
+                <form class="d-flex p-2 bg-dark" style="border: solid 1px #0275d8; border-bottom:0;">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-primary bg-light" type="submit">Search</button>
+                </form>
+
+                <div class="jumbotron pt-2 bg-dark white overflow-auto sticky-top" style="
+                border-radius: 0;
+                border: solid 1px #0275d8;
+                border-top: 0;
+                overflow: auto;
+                height:60vh;">
+
+
+                    {% for expert in expert_list %}
+                    <form method="POST" action="schedule/get_appointment/{{expert.profile_id}}">
+                        {% csrf_token %}
+                        <div class="card my-3">
+                            <h5 class="card-header bg-warning"><img
+                                    src="data:image/png;base64,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"
+                                    width="20px" class="rounded me-2" alt="...">
+                                <strong class="mr-auto text-dark">{{expert.name}}</strong>
+                            </h5>
+                            <div class="card-body">
+                                <p class="card-text">Qualification: {{expert.qualification}}</p>
+                                <button class="btn btn-primary">Take Appointment</button>
+                            </div>
+                        </div>
+                    </form>
+                    {% endfor %}
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<br/><br/>
+
+
+<!-- List of students -->
+
+
+<div class="container my-3">
+    <div class="card mb-3 ">
+        <div class="card-header text-white bg-primary h5">If we helped you in some way, Help us by Writing a review !!
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Write Review...</h5>
+            <form method="POST" action="review/write" class="mt-3">
+                {% csrf_token %}
+
+                <div class="form-group ">
+                    <textarea class="form-control border-dark" name="review_content" id="review_content" placeholder="How we helped you? "></textarea>
+                </div>
+
+                <center><button class="btn btn-success y-2 border border-dark">Post Review</button></center>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+
+<!-- Column -->
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+    crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+    integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+    integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+    crossorigin="anonymous"></script>
+
+{% endblock %}
+
+{% block script_section %} {% endblock %}
