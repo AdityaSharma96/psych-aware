@@ -18,11 +18,27 @@ https://youtu.be/5vJXGWXfmIM
 Home Page
 
 <img src = "https://github.com/atulthakre00/psych-aware/blob/main/Home.png"></img>
+
+Blogs Page
 <img src = "https://github.com/atulthakre00/psych-aware/blob/main/blogs.png"></img>
+
+Blog View
 <img src = "https://github.com/atulthakre00/psych-aware/blob/main/blogread.png"></img>
+
+Student Dashboard
 <img src = "https://github.com/atulthakre00/psych-aware/blob/main/studentdashboard.png"></img>
+
+Student Scheduler
 <img src = "https://github.com/atulthakre00/psych-aware/blob/main/studentscheduler.png"></img>
+
+Mentor Dashboard
 <img src = "https://github.com/atulthakre00/psych-aware/blob/main/mentordashboard.png"></img>
+
+Mentor Scheduler
 <img src = "https://github.com/atulthakre00/psych-aware/blob/main/mentorscheduler.png"></img>
+
+Chat Student Example
 <img src = "https://github.com/atulthakre00/psych-aware/blob/main/chatstudent.png"></img>
+
+Chat Mentor Example
 <img src = "https://github.com/atulthakre00/psych-aware/blob/main/chatmentor.jpeg"></img>
