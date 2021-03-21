@@ -24,4 +24,4 @@ Home Page
 <img src = "https://github.com/atulthakre00/psych-aware/blob/main/mentordashboard.png"></img>
 <img src = "https://github.com/atulthakre00/psych-aware/blob/main/mentorscheduler.png"></img>
 <img src = "https://github.com/atulthakre00/psych-aware/blob/main/chatstudent.png"></img>
-<img src = "https://github.com/atulthakre00/psych-aware/blob/main/chatmentor.png"></img>
+<img src = "https://github.com/atulthakre00/psych-aware/blob/main/chatmentor.jpeg"></img>
