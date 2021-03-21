@@ -5,9 +5,14 @@
 
 {% block head %}
 <style>
+    .shadowE{
+        box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+    }
     body{
-    background:linear-gradient(-100deg,white 40%,violet 60%);
-
+    /*background:linear-gradient(-100deg,white 40%,violet 60%);*/
+    background: #7F7FD5;
+            background: -webkit-linear-gradient(to right, #91EAE4, #86A8E7, #7F7FD5);
+            background: linear-gradient(to right, #91EAE4, #86A8E7, #7F7FD5);
     font-family:poppins;
     }
     .carousel-control-prev{
@@ -39,6 +44,12 @@
     border-radius:8%;
     }
 
+    .blogSec{
+        background-color: rgba(255,255,255,0.5);
+        box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+        text-align: center;
+    }
+
 </style>
 {% endblock %}
 
@@ -62,13 +73,13 @@
 
 <!-- /container -->
 <main class="container-fluid">
-  <div class="bg-light p-5 rounded" style="background-image:url('https://media.istockphoto.com/photos/adult-and-child-hands-holding-lime-green-ribbon-on-green-background-picture-id1173495922?k=6&m=1173495922&s=612x612&w=0&h=7rJhwKJtBsy4PoDNjiqGxNOabk5QIAMHtRBM6sGWdeY=');background-position: center;
-  background-repeat: no-repeat; background-size: cover; ">
-    <h1>Our Blogs</h1>
-    <p class="lead">Visit our Blog Section to see what our mentors say..</p>
-    <button class="btn btn-primary"><a class="btn btn-lg btn-primary" href="/blog/view" role="button">Visit Blog Page &raquo;</a></button>
-  </div>
-</main>
+    <div class="bg-light p-5 rounded" style="background-image:url('https://media.istockphoto.com/photos/adult-and-child-hands-holding-lime-green-ribbon-on-green-background-picture-id1173495922?k=6&m=1173495922&s=612x612&w=0&h=7rJhwKJtBsy4PoDNjiqGxNOabk5QIAMHtRBM6sGWdeY=');background-position: center;
+    background-repeat: no-repeat; background-size: cover; ">
+      <h1>Our Blogs</h1>
+      <p class="lead">Visit our Blog Section to see what our mentors say..</p>
+      <button class="btn btn-primary"><a class="btn btn-lg btn-primary" href="/blog/view" role="button">Visit Blog Page &raquo;</a></button>
+    </div>
+  </main>
 <!--Developers-->
 <hr>
 <div class="container my-2" id="review">
@@ -88,7 +99,7 @@
                   <div class="row">
                    {% for i in reviews %}
 
-                      <div class="col-xs-3 col-sm-3 col-md-3">
+                      <div class="col-xs-3 shadowE col-sm-3 col-md-3">
                           <div class="single-box bg-dark border-rounded p-3">
                               <div class="img-area ">
                                   <img class="bd-placeholder-img rounded-circle my-3" width="40" height="40" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTnIyZxJAl5REjZbn-b1EMFrTtXw3dXAQ7fTg&usqp=CAU" alt="">
