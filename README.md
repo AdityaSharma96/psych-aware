@@ -17,3 +17,11 @@ https://youtu.be/5vJXGWXfmIM
 Home Page
 
 <img src = "https://github.com/atulthakre00/psych-aware/blob/main/Home.png"></img>
+<img src = "https://github.com/atulthakre00/psych-aware/blob/main/blogs.png"></img>
+<img src = "https://github.com/atulthakre00/psych-aware/blob/main/blogread.png"></img>
+<img src = "https://github.com/atulthakre00/psych-aware/blob/main/studentdashboard.png"></img>
+<img src = "https://github.com/atulthakre00/psych-aware/blob/main/studentscheduler.png"></img>
+<img src = "https://github.com/atulthakre00/psych-aware/blob/main/mentordashboard.png"></img>
+<img src = "https://github.com/atulthakre00/psych-aware/blob/main/mentorscheduler.png"></img>
+<img src = "https://github.com/atulthakre00/psych-aware/blob/main/chatstudent.png"></img>
+<img src = "https://github.com/atulthakre00/psych-aware/blob/main/chatmentor.png"></img>
