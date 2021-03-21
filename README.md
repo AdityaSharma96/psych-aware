@@ -3,6 +3,8 @@
 ## Demo Video added on Youtube:
 https://youtu.be/5vJXGWXfmIM
 
+## PPT presentation
+https://docs.google.com/presentation/d/1Z9o9faf-Qdu1CuOGDfHZCrkzsXSfNuuYhLQFF7fz8ig/edit?usp=sharing
 ---
 ## Tasks Done:
 - Django Project Setup done
